@@ -8,15 +8,15 @@
 
 <What this scenario proves.>
 
-## Prerequisites
+## Preconditions
 
 - <required condition>
 
-## Entry
+## Entry / Trigger
 
-<Exact verified starting point.>
+<Exact verified starting point or trigger.>
 
-## Flow
+## Known-Good Path
 
 ```text
 <step/phase>
@@ -26,19 +26,19 @@
 <verification>
 ```
 
-## Expected Observations
+## Observable Checkpoints
 
 | Phase | Action | Expected observable result |
 |---|---|---|
 | <phase> | <action> | <result> |
 
-## Pass Criteria
+## Expected Result
 
 - <explicit pass condition>
 
-## Failure Evidence
+## Evidence
 
-Collect only what is useful:
+Collect only what is useful on failure or block:
 
 - <status/log/UI evidence>
 
@@ -50,11 +50,24 @@ If no fallback has been verified, say so explicitly.
 
 ## Stop Condition
 
-Stop retrying when:
+Stop retrying or investigating when:
 
 - <condition>
 
-Then classify the result and continue independent scenarios where possible.
+Then record Verdict / Reason and continue independent scenarios where possible.
+
+## Dependencies
+
+- Depends on: <environment/service/state/previous scenario>
+- May block: <dependent scenarios, if any>
+
+## Cleanup / Recovery
+
+After PASS / FAIL / BLOCKED, restore or preserve the environment so that:
+
+- <recovery action or verified safe end state>
+
+If no cleanup is required, say so explicitly.
 
 ## Independent Follow-ups
 
