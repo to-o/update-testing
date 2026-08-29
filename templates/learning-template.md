@@ -5,7 +5,7 @@ Use this structure when adding an entry to `docs/testing/LEARNINGS.md`.
 ```markdown
 ## YYYY-MM-DD — <short title>
 
-- Status: CANDIDATE | VERIFYING | PROMOTED | REJECTED
+- Status: OBSERVED | REPRODUCED | VERIFYING | PROMOTED | REJECTED
 - Scenario: <scenario/playbook>
 - Observation: <what was actually observed>
 - Evidence: <logs, screenshot, command output, issue or reference>
@@ -16,9 +16,17 @@ Use this structure when adding an entry to `docs/testing/LEARNINGS.md`.
 - Proposed destination: <overview / playbook / troubleshooting / knowledge>
 ```
 
+Fact maturity:
+
+```text
+UNKNOWN → OBSERVED → REPRODUCED → VERIFIED → CANONICAL
+```
+
 Promotion rule:
 
-- repeated stable product model → `overview/`
-- repeatable testing procedure → `playbooks/`
-- repeatable symptom diagnosis/fallback → `troubleshooting/`
-- cross-scenario stable fact → `knowledge/`
+- `OBSERVED` / `REPRODUCED` remain in `LEARNINGS.md` while verification continues.
+- Only `VERIFIED` knowledge should be promoted into canonical testing docs.
+- verified product/test mental model → `overview/`
+- verified repeatable testing procedure → `playbooks/`
+- verified symptom diagnosis/fallback → `troubleshooting/`
+- verified cross-scenario stable fact → `knowledge/`
