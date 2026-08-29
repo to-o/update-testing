@@ -15,6 +15,12 @@ Collect first:
 - <evidence 1>
 - <evidence 2>
 
+## Observable State
+
+Record the current state before retrying:
+
+- <state / phase / last successful checkpoint>
+
 ## Fast Checks
 
 Perform low-cost checks in order:
@@ -24,11 +30,11 @@ Perform low-cost checks in order:
 
 ## Meaningful Retry
 
-Retry only when this changes a relevant condition:
+Retry only when new information or a changed condition makes the retry meaningful:
 
 - <retry condition/action>
 
-Do not repeat an unchanged action indefinitely.
+Do not repeat an unchanged action mechanically.
 
 ## Verified Fallback
 
@@ -36,14 +42,29 @@ Do not repeat an unchanged action indefinitely.
 
 If none exists, state `No verified fallback`.
 
-## Classification
+## Verdict / Reason
 
-Use the evidence to select one:
+Use one Verdict:
 
-- PRODUCT_FAIL
-- ENVIRONMENT_FAIL
-- AUTOMATION_FAIL
+- PASS
+- FAIL
 - BLOCKED
+- SKIPPED
+
+If Verdict is `FAIL` or `BLOCKED`, record one Reason:
+
+- PRODUCT
+- ENVIRONMENT
+- AUTOMATION
+- DEPENDENCY
+- UNKNOWN
+
+Example:
+
+```text
+Verdict: FAIL
+Reason: PRODUCT
+```
 
 ## Stop Condition
 
