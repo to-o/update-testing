@@ -35,7 +35,7 @@ CANONICAL
 
 - 第一次观察到、未来测试可能有价值的新行为：记录为 `OBSERVED`。
 - 已经可以重复出现但仍需确认边界：记录为 `REPRODUCED`，继续保留在本文件。
-- 已有充分证据、适用条件清楚：标记为 `VERIFIED` 并晋升到正式文档。
+- 已有充分证据、适用条件清楚：标记为 `VERIFIED`，随后晋升到正式文档并标记为 `PROMOTED`。
 - 已被证伪：标记 `REJECTED`，整理时可以删除。
 - 已晋升：标记 `PROMOTED` 并链接到正式文档，整理时可以删除。
 - 不记录完整聊天流水账。
@@ -46,7 +46,7 @@ CANONICAL
 ```markdown
 ## YYYY-MM-DD — <short title>
 
-- Status: OBSERVED | REPRODUCED | VERIFYING | PROMOTED | REJECTED
+- Status: OBSERVED | REPRODUCED | VERIFYING | VERIFIED | PROMOTED | REJECTED
 - Scenario: <scenario/playbook>
 - Observation: <what was observed>
 - Evidence: <logs, screenshot, command output, issue or other reference>
